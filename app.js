@@ -4,6 +4,22 @@ var express = require("express"),
   mongoose = require("mongoose"),
   methodOverride = require("method-override"),
   expressSanitizer = require("express-sanitizer");
+
+mongoose
+  .connect(
+    "mongodb+srv://longbo:weilongbo.98@cluster0-k5ks6.mongodb.net/test?retryWrites=true&w=majority",
+    {
+      useNewUrlParser: true,
+      useCreateIndex: true
+    }
+  )
+  .then(() => {
+    console.log("connected to DB!");
+  })
+  .catch(err => {
+    console.log("ERROR:", err.message);
+  });
+
 //App config
 app.set("view engine", "ejs");
 app.use(express.static("public"));
@@ -133,4 +149,3 @@ var port = process.env.PORT || 3000;
 app.listen(port, function() {
   console.log("The Blog server Has Started!");
 });
- 
