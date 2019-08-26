@@ -131,5 +131,6 @@ app.delete("/blogs/:id", function(req, res) {
 
 var port = process.env.PORT || 3000;
 app.listen(port, function() {
-  console.log("The YelpCamp Server Has Started!");
+  console.log("The Blog server Has Started!");
 });
+ 
